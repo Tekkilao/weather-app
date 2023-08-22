@@ -16,10 +16,11 @@ export default function SearchBox() {
     
     const handleLocation = location => {
         setCity(location.target.value)
+        
     }
     
     function handleWeather() {
-        const APIKey = "e43c22580b5ead7706fa3a706f65d6ec";
+        const APIKey = process.env.REACT_APP_APIKEY;
 
         if (city === "") return;
     
@@ -29,11 +30,13 @@ export default function SearchBox() {
             if (json.cod === "404"){
                 setIsShown(json.cod)
                 setSearchClass("container-error")
+                console.log(APIKey)
             }
             else {
                 setIsShown(json.cod)
                 setSearchClass("container-search")
                 setWeatherData(json)
+                console.log(APIKey)
                 
             }
         })
