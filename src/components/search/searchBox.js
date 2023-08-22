@@ -30,13 +30,13 @@ export default function SearchBox() {
             if (json.cod === "404"){
                 setIsShown(json.cod)
                 setSearchClass("container-error")
-                console.log(APIKey)
+
             }
             else {
                 setIsShown(json.cod)
                 setSearchClass("container-search")
                 setWeatherData(json)
-                console.log(APIKey)
+
                 
             }
         })
